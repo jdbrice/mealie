@@ -18,10 +18,16 @@ services:
       RECIPE_LANDSCAPE_VIEW: 'true'
       RECIPE_DISABLE_COMMENTS: 'false'
       RECIPE_DISABLE_AMOUNT: 'false'
+      BASE_URL: 'https://yum.jdbburg.com'
 
       # Gunicorn
       # WEB_CONCURRENCY: 2
       # WORKERS_PER_CORE: 0.5
       # MAX_WORKERS: 8
     volumes:
-      - mealie-data/:/app/data
+      - mealie-data:/app/data
+
+
+volumes:
+  mealie-data:
+    driver: local
